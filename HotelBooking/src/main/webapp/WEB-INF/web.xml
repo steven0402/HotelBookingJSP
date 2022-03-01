@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">  
+	<servlet>
+		<servlet-name>SearchHotelServlet</servlet-name>
+		<servlet-class>SearchHotelReceive</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchHotelServlet</servlet-name>
+		<url-pattern>/SearchHotel</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SelectHotelServlet</servlet-name>
+		<servlet-class>SelectHotelReceive</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SelectHotelServlet</servlet-name>
+		<url-pattern>/selectHotel</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BookHotelServlet</servlet-name>
+		<servlet-class>BookHotelReceive</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookHotelServlet</servlet-name>
+		<url-pattern>/BookHotel</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
