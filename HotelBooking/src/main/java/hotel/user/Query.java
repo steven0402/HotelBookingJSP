@@ -52,7 +52,7 @@ public class Query
 	int count = -1;
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:../../Users/ASUS/Desktop/java_project/JavaFinalProject/hotel/data/hotelreservation.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:../data/hotelreservation.db");
 	    c.setAutoCommit(false);
 	    
 	    stmt = c.createStatement();

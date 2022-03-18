@@ -114,7 +114,7 @@ public class Order extends Query
 
 	try {
 	    //Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:hotel/data/hotelreservation.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:C:/Users/steven980402/eclipse-workspace/HotelBooking/hotel/data/hotelreservation.db");
 	    c.setAutoCommit(false);
 	    
 	    stmt = c.createStatement();

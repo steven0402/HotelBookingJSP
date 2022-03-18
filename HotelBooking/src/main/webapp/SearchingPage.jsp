@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +11,9 @@
 	<link rel="stylesheet" type="text/css" href="mycss.css">
 	
 </head>
+
 <body>
-	<div class="backgroundImage"></div>
-	
-	<div class="topnavi">
-		<a href="IndexPage.jsp"> 主頁 </a>
-		<a href="#"> 關於我們 </a>
-		<a href="booking.jsp"> 訂單 </a>
-	</div>
+	<div class="header"> <jsp:include page="/header.jsp" /> </div>
 
 	<div class="container-main">
 		<div class="searching">
