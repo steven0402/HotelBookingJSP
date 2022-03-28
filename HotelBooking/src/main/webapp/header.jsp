@@ -6,5 +6,5 @@
 	<div class="topnavi">
 		<a href="IndexPage.jsp"> 主頁 </a>
 		<a href="#"> 關於我們 </a>
-		<a href="booking.jsp"> 訂單 </a>
+		<a href="SearchBookingPage.jsp"> 訂單 </a>
 	</div>

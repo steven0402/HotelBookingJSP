@@ -55,7 +55,7 @@
 					<%--姓名--%>
 					<div class="confirmbar">
 						<div id="innerplaneAA"><label><b>姓名: </b></label></div>
-						<div id="innerplaneBB"><input type="text" style="align-text:center" class="ipx40" name="UIDsingleR" placeholder="姓名" value="admin"></div>
+						<div id="innerplaneBB"><input type="text" style="align-text:center" class="ipx40" name="UID" placeholder="姓名" value="admin"></div>
 					</div>	
 					<%--入住日期--%>
 					<div class="confirmbar">

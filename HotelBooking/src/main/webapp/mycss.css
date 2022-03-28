@@ -57,11 +57,14 @@
 	left:50%; width:50%; height: 100%; position: absolute;
 }
 #innerplaneAA{
-	left:0; width:50%; height: 100%; position: absolute;
+	left:0; width:50%; position: absolute;
 }
 #innerplaneBB{
-	left:50%; width:50%; height: 100%; position: absolute;
+	left:50%; width:50%; position: absolute;
 }
+/*#innerplaneAA .label{
+	left:100%; position: absolute;
+}*/
 
 .containter-main{
 	z-index: 1;
@@ -215,7 +218,6 @@ input[type=text]{
     border-radius: 4px;
     resize: vertical;
 	margin: 5px;
-  	float: left;
   	margin-top: 5%;
 }
 
@@ -259,6 +261,22 @@ input[type=submit]{
 	
 }
 
+/*直立排版*/
+.columnplane{
+	position:relative;
+	display:block;
+	
+}
+.columnplane input{
+  position: relative;
+  display: block;
+  left: -25%;
+  margin: auto;
+  padding: 12px;
+  width: 50%;
+  font-size: 15px;
+}
+
 /*搜尋結果表格*/
 .tableStyle{
 	width: 100%;
@@ -296,29 +314,48 @@ input[type=submit].chosed{
 
 /*輸入+LABEL*/
 .confirmbar{
-	padding: 12px;
+	padding: 10px;
     border: none;
-  	width: 60%;
+  	/*width: 60%;
 	right: 50%;
-	margin-top: 20px;
+	margin-top: 20px;*/
+	height: 50px;
 	display: block;
+
 }
 .confirmbar label{
+	position: relative;
 	text-align:right;
 	color:black;
-	font-size:25px;
-
-	right: 0;
+	font-size:10px;
+	right: -25%;
 }
 
 .confirmbar input[type=text]{
 	text-align:center;
 	color:black;
 	left: 0;
-	right: 0;
 	top: 0;
 	bottom: 0;
 	margin: auto;
+}
+
+/* 搜尋器 */
+.BookingBox{
+	border: 2px solid #ffffff;
+	background-color: #ffffff;
+	width: 500px;
+	height: 300px;
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+	
+    position:absolute;
+    left:0;
+    top: 0;
+    bottom:0;
+    right: 0;
+    margin: auto;
+    display: block;
+	
 }
 
 @media screen and (max-width: 600px) {

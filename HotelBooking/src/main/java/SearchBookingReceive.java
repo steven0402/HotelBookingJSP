@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import hotel.exceptions.CheckException;
 import hotel.exceptions.OrderException;
 import hotel.user.*;
 import java.awt.*;
@@ -15,25 +16,20 @@ import java.sql.*;
 import hotel.exceptions.OrderException;
 import hotel.user.*;
 
-public class BookHotelReceive extends HttpServlet
+public class SearchBookingReceive extends HttpServlet
 {
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException
 	{
 
-		int singleroom = Integer.parseInt(req.getParameter("singleR"));
-		int doubleroom = Integer.parseInt(req.getParameter("doubleR"));
-		int quadroom = Integer.parseInt(req.getParameter("quadR"));
-		String indate = req.getParameter("inyear")+"-"+req.getParameter("inmonth")+"-"+req.getParameter("inday");
-		String outdate = req.getParameter("outyear")+"-"+req.getParameter("outmonth")+"-"+req.getParameter("outday");
-		int hotelID = Integer.parseInt(req.getParameter("hotelID"));
-		String UID = req.getParameter("UID");
+		String userID = req.getParameter("UID");
+		int orderID = Integer.parseInt(req.getParameter("OID"));
+
 		
-		Order order = new Order(singleroom, doubleroom, quadroom, indate, outdate, hotelID, UID);
+		Check check = new Check(userID, orderID);
 		try{
-			OrderResult r = order.orderRoom();
-			
-			req.setAttribute("OrderUID", r.uid);
-			req.setAttribute("OrderID", r.id);
+			CheckResult r = check.getOrder();
+			req.setAttribute("OrderUID", userID);
+			req.setAttribute("OrderID", orderID);	
 			req.setAttribute("OrderHOTELID", r.hotel_id);
 			req.setAttribute("OrderINDATE", r.in_date);
 			req.setAttribute("OrderOUTDATE", r.out_date);
@@ -43,12 +39,12 @@ public class BookHotelReceive extends HttpServlet
 			req.setAttribute("OrderTOTALP", r.total_price);
 			req.setAttribute("OrderTOTALN", r.total_nights);
 			
-			req.getRequestDispatcher("BookingFinishPage.jsp").forward(req, res);
+			req.getRequestDispatcher("BookingDetailPage.jsp").forward(req, res);
 			
 		}
-		catch(OrderException order_err){
+		catch(CheckException check_err){
 			res.sendRedirect("BookingFailPage.jsp");
-			
 		}
+			
 	}
 }

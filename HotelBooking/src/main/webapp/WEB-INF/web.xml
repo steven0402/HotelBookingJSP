@@ -27,4 +27,22 @@
 		<url-pattern>/BookHotel</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>SearchBookingServlet</servlet-name>
+		<servlet-class>SearchBookingReceive</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchBookingServlet</servlet-name>
+		<url-pattern>/SearchBooking</url-pattern>
+	</servlet-mapping>
+
+		<servlet>
+		<servlet-name>DeleteBookingServlet</servlet-name>
+		<servlet-class>DeleteBookingReceive</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteBookingServlet</servlet-name>
+		<url-pattern>/DeleteBooking</url-pattern>
+	</servlet-mapping>
+
 </web-app>

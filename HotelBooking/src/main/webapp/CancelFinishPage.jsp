@@ -15,7 +15,7 @@
 <body>
 	<div class="header"> <jsp:include page="/header.jsp" /> </div>
 		<div class="searchResult">
-			<p style="font-size:150%;" align="center"> 頁面加載失敗，請重新載入 </p>
+			<p style="font-size:150%;" align="center"> 預訂已取消 </p>
 		</div>
 </body>
 </html>
