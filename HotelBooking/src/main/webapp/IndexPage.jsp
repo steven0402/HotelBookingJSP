@@ -20,14 +20,25 @@
 				<div class="searching">
 				
 					<div id="innerplaneA">
-						<div class="roomsize">				
+						<div class="roomsize">
+							<p>房間大小</p>
+							<div style="display:inline-block">		
+							<label>單人房</label>
 							<input type="text" class="ipx80" name="single" placeholder="單人房" value="1">
+							</div>
+							<div style="display:inline-block">
+							<label>雙人房</label>
 							<input type="text" class="ipx80" name="double" placeholder="雙人房" value="2">
-							<input type="text" class="ipx80" name="quad" placeholder="四人房" value="2">				
+							</div>
+							<div style="display:inline-block">
+							<label>四人房</label>
+							<input type="text" class="ipx80" name="quad" placeholder="四人房" value="2">		
+							</div>		
 						</div>				
 					</div>
 
 					<div id="innerplaneB">
+						<p> 星級</p>
 						<div class="stars">
 							<input type="text" class="ipx80" name="star" placeholder="酒店星數" value="3">
 						</div>

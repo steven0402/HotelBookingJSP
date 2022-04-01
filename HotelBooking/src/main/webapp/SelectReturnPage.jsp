@@ -81,9 +81,9 @@
 					</div>
 					
 				</div>
+				<input type="submit" value="確定" class="chosed">
 			</div>
 
-			<input type="submit" value="確定" class="chosed">
 		</form>
 	</div>
 </body>
