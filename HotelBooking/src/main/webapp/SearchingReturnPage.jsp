@@ -20,10 +20,22 @@
 	
 		String indate = request.getParameter("inyear")+"-"+request.getParameter("inmonth")+"-"+request.getParameter("inday");
 		String outdate = request.getParameter("outyear")+"-"+request.getParameter("outmonth")+"-"+request.getParameter("outday");
+		String inyear = request.getParameter("inyear");
+		String inmonth = request.getParameter("inmonth");
+		String inday = request.getParameter("inday");
+		String outyear = request.getParameter("outyear");
+		String outmonth = request.getParameter("outmonth");
+		String outday = request.getParameter("outday");
 	%>
 	
 	<form action="selectHotel">
 		<div class="hiddenChoice" id="hiddenbox">
+			<input type="text" name="inyear" id="Hinyear" value="<%=inyear%>">
+			<input type="text" name="inmonth" id="Hinmonth" value="<%=inmonth%>">
+			<input type="text" name="inday" id="Hinday" value="<%=inday%>">
+			<input type="text" name="outyear" id="Houtyear" value="<%=outyear%>">
+			<input type="text" name="outmonth" id="Houtmonth" value="<%=outmonth%>">
+			<input type="text" name="outday" id="Houtday" value="<%=outday%>">
 			<input type="text" name="hotelID" id="HhotelID">
 			<input type="text" name="star" id="Hstar">
 			<input type="text" name="single" id="Hsingle">

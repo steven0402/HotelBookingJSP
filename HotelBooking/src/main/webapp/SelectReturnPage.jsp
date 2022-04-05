@@ -24,6 +24,12 @@
 		String outdate = request.getParameter("outdate");
 		int hotelID = Integer.parseInt(request.getParameter("hotelID"));
 		int amount = Integer.parseInt(request.getParameter("amount"));
+		String inyear = request.getParameter("inyear");	
+		String inmonth = request.getParameter("inmonth");
+		String inday = request.getParameter("inday");	
+		String outyear = request.getParameter("outyear");	
+		String outmonth = request.getParameter("outmonth");
+		String outday = request.getParameter("outday");
 	%>
 		
 	<div class="container-main">
@@ -62,9 +68,9 @@
 						<div id="innerplaneAA"><label><b>入住日期: </b></label></div>
 						<div id="innerplaneBB">
 							<div class="dateformat2">
-								<input type="text" class="ipx20" name="inyear" placeholder="年" value="2022">
-								<input type="text" class="ipx10" name="inmonth" placeholder="月" value="1">
-								<input type="text" class="ipx10" name="inday" placeholder="日" value="5">
+								<input type="text" class="ipx20" name="inyear" placeholder="年" value="<%=inyear%>">
+								<input type="text" class="ipx10" name="inmonth" placeholder="月" value="<%=inmonth%>">
+								<input type="text" class="ipx10" name="inday" placeholder="日" value="<%=inday%>">
 							</div>
 						</div>
 					</div>
@@ -73,9 +79,9 @@
 						<div id="innerplaneAA"><label><b>退房日期: </b></label></div>
 						<div id="innerplaneBB">
 							<div class="dateformat2">
-								<input type="text" class="ipx20" name="outyear" placeholder="年" value="2022">
-								<input type="text" class="ipx10" name="outmonth" placeholder="月" value="1">
-								<input type="text" class="ipx10" name="outday" placeholder="日" value="7">
+								<input type="text" class="ipx20" name="outyear" placeholder="年" value="<%=outyear%>">
+								<input type="text" class="ipx10" name="outmonth" placeholder="月" value="<%=outmonth%>">
+								<input type="text" class="ipx10" name="outday" placeholder="日" value="<%=outday%>">
 							</div>
 						</div>
 					</div>

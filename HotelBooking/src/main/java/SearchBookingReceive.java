@@ -22,29 +22,41 @@ public class SearchBookingReceive extends HttpServlet
 	{
 
 		String userID = req.getParameter("UID");
-		int orderID = Integer.parseInt(req.getParameter("OID"));
-
+		String orderID = req.getParameter("OID");
+		boolean wrongInput = false;
 		
-		Check check = new Check(userID, orderID);
-		try{
-			CheckResult r = check.getOrder();
-			req.setAttribute("OrderUID", userID);
-			req.setAttribute("OrderID", orderID);	
-			req.setAttribute("OrderHOTELID", r.hotel_id);
-			req.setAttribute("OrderINDATE", r.in_date);
-			req.setAttribute("OrderOUTDATE", r.out_date);
-			req.setAttribute("OrderSINGLE", r.one_adult);
-			req.setAttribute("OrderDOUBLE", r.two_adults);
-			req.setAttribute("OrderQUAD", r.four_adults);
-			req.setAttribute("OrderTOTALP", r.total_price);
-			req.setAttribute("OrderTOTALN", r.total_nights);
-			
-			req.getRequestDispatcher("BookingDetailPage.jsp").forward(req, res);
-			
+		if(userID == "" || orderID == "")
+		{
+			wrongInput = true;
 		}
-		catch(CheckException check_err){
+		
+		if(wrongInput == false)
+		{
+			Check check = new Check(userID, Integer.parseInt(orderID));
+			try{
+				CheckResult r = check.getOrder();
+				req.setAttribute("OrderUID", userID);
+				req.setAttribute("OrderID", orderID);	
+				req.setAttribute("OrderHOTELID", r.hotel_id);
+				req.setAttribute("OrderINDATE", r.in_date);
+				req.setAttribute("OrderOUTDATE", r.out_date);
+				req.setAttribute("OrderSINGLE", r.one_adult);
+				req.setAttribute("OrderDOUBLE", r.two_adults);
+				req.setAttribute("OrderQUAD", r.four_adults);
+				req.setAttribute("OrderTOTALP", r.total_price);
+				req.setAttribute("OrderTOTALN", r.total_nights);
+				
+				req.getRequestDispatcher("BookingDetailPage.jsp").forward(req, res);
+				
+			}
+			catch(CheckException check_err){
+				res.sendRedirect("BookingFailPage.jsp");
+			}
+		
+		}
+		else
+		{
 			res.sendRedirect("BookingFailPage.jsp");
 		}
-			
 	}
 }

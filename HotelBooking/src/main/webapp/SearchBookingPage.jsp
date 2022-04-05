@@ -23,7 +23,7 @@
 						<div class="confirmbar" style="left: 50%">
 							<div class="columnplane">
 								<label><b>姓名: </b></label><br>
-								<input type="text" style="align-text:center;" class="ipx40" name="UID" placeholder="姓名" value="">
+								<input type="text" style="align-text:center;" class="ipx40" name="UID" placeholder="姓名" value="admin">
 							</div>
 						</div>
 				
@@ -34,7 +34,7 @@
 								<input type="text" style="align-text:center" class="ipx40" name="OID" placeholder="訂單編號" value="">
 							</div>
 						</div>
-						<input type="submit" value="搜尋" class="BookingsearchButton">
+						<input type="submit" value="搜尋" class="BookingsearchButton" style="width:20%; left:40%">
 					</form>
 				</div>
 				

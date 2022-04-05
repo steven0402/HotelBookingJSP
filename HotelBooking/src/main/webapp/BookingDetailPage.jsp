@@ -17,8 +17,8 @@
 	
 	<div class="container-main">
 		<form action="DeleteBooking">	
-			<input style="hidden" name="OrderUID" value="${OrderUID}">
-			<input style="hidden" name="OrderID" value="${OrderID}">		
+			<input style="display:none;" name="OrderUID" value="${OrderUID}">
+			<input style="display:none;" name="OrderID" value="${OrderID}">		
 			<div class="searching">
 				<p style="text-align:center; color:red; font-size:20px"><b>您的訂單</b></p>
 				<p style="text-align:center;font-size:15"><b>姓名: ${OrderUID}</b></p>
@@ -31,8 +31,8 @@
 				<p style="text-align:center;font-size:15"><b>四人房: ${OrderQUAD}</b></p>
 				<p style="text-align:center;font-size:15"><b>總價: ${OrderTOTALP}</b></p>
 				<p style="text-align:center;font-size:15"><b>天數: ${OrderTOTALN}</b></p>
-			</div>
-			<input type="submit" value="取消預訂" class="searchButton">	
+				<input type="submit" value="取消預訂" class="searchButton">
+			</div>	
 		</form>	
 	</div>		
 </body>

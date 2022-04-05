@@ -45,7 +45,7 @@ public class Order extends Query
 	Set<Integer> rooms = new HashSet<Integer>();
 	try {
 	    Class.forName("org.sqlite.JDBC");
-	    c = DriverManager.getConnection("jdbc:sqlite:../data/hotelreservation.db");
+	    c = DriverManager.getConnection("jdbc:sqlite:hotel/data/hotelreservation.db");
 	    c.setAutoCommit(false);
 	    
 	    stmt = c.createStatement();

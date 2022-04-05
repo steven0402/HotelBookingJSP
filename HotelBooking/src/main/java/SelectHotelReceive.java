@@ -23,7 +23,15 @@ public class SelectHotelReceive extends HttpServlet
 		//String outdate = req.getParameter("outdate");
 		//int hotelID = Integer.parseInt(req.getParameter("hotelID"));
 		//int amount = Integer.parseInt(req.getParameter("amount"));
+		if(req.getParameter("hotelID") !="")
+		{
+			req.getRequestDispatcher("SelectReturnPage.jsp").forward(req, res);
+		}
+		else
+		{
+			res.sendRedirect("BookingFailPage.jsp");
+		}
 		
-		req.getRequestDispatcher("SelectReturnPage.jsp").forward(req, res);
+		
 	}
 }
