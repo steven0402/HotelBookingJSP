@@ -28,7 +28,7 @@ public class BookHotelReceive extends HttpServlet
 		int hotelID = Integer.parseInt(req.getParameter("hotelID"));
 		String UID = req.getParameter("UID");
 		ValidInput checkvalid = new ValidInput();
-		if(checkvalid.CheckSpecialCharExist(UID))
+		if(checkvalid.CheckSpecialCharExist(UID) == false)
 		{
 			Order order = new Order(singleroom, doubleroom, quadroom, indate, outdate, hotelID, UID);
 			try{
