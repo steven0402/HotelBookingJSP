@@ -15,7 +15,6 @@ import java.util.*;
 import java.sql.*;
 import hotel.exceptions.OrderException;
 import hotel.user.*;
-
 public class SearchBookingReceive extends HttpServlet
 {
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException
@@ -24,8 +23,10 @@ public class SearchBookingReceive extends HttpServlet
 		String userID = req.getParameter("UID");
 		String orderID = req.getParameter("OID");
 		boolean wrongInput = false;
+		ValidInput checkvalid = new ValidInput();
+
 		
-		if(userID == "" || orderID == "")
+		if(userID == "" || orderID == "" || checkvalid.CheckSpecialCharExist(userID) || checkvalid.CheckSpecialCharExist(orderID) )
 		{
 			wrongInput = true;
 		}
@@ -56,7 +57,7 @@ public class SearchBookingReceive extends HttpServlet
 		}
 		else
 		{
-			res.sendRedirect("BookingFailPage.jsp");
+			res.sendRedirect("WrongInputPage.jsp");
 		}
 	}
 }

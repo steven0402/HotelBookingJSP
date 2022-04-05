@@ -27,28 +27,35 @@ public class BookHotelReceive extends HttpServlet
 		String outdate = req.getParameter("outyear")+"-"+req.getParameter("outmonth")+"-"+req.getParameter("outday");
 		int hotelID = Integer.parseInt(req.getParameter("hotelID"));
 		String UID = req.getParameter("UID");
-		
-		Order order = new Order(singleroom, doubleroom, quadroom, indate, outdate, hotelID, UID);
-		try{
-			OrderResult r = order.orderRoom();
-			
-			req.setAttribute("OrderUID", r.uid);
-			req.setAttribute("OrderID", r.id);
-			req.setAttribute("OrderHOTELID", r.hotel_id);
-			req.setAttribute("OrderINDATE", r.in_date);
-			req.setAttribute("OrderOUTDATE", r.out_date);
-			req.setAttribute("OrderSINGLE", r.one_adult);
-			req.setAttribute("OrderDOUBLE", r.two_adults);
-			req.setAttribute("OrderQUAD", r.four_adults);
-			req.setAttribute("OrderTOTALP", r.total_price);
-			req.setAttribute("OrderTOTALN", r.total_nights);
-			
-			req.getRequestDispatcher("BookingFinishPage.jsp").forward(req, res);
-			
+		ValidInput checkvalid = new ValidInput();
+		if(checkvalid.CheckSpecialCharExist(UID))
+		{
+			Order order = new Order(singleroom, doubleroom, quadroom, indate, outdate, hotelID, UID);
+			try{
+				OrderResult r = order.orderRoom();
+				
+				req.setAttribute("OrderUID", r.uid);
+				req.setAttribute("OrderID", r.id);
+				req.setAttribute("OrderHOTELID", r.hotel_id);
+				req.setAttribute("OrderINDATE", r.in_date);
+				req.setAttribute("OrderOUTDATE", r.out_date);
+				req.setAttribute("OrderSINGLE", r.one_adult);
+				req.setAttribute("OrderDOUBLE", r.two_adults);
+				req.setAttribute("OrderQUAD", r.four_adults);
+				req.setAttribute("OrderTOTALP", r.total_price);
+				req.setAttribute("OrderTOTALN", r.total_nights);
+				
+				req.getRequestDispatcher("BookingFinishPage.jsp").forward(req, res);
+				
+			}
+			catch(OrderException order_err){
+				res.sendRedirect("BookingFailPage.jsp");
+				
+			}
 		}
-		catch(OrderException order_err){
-			res.sendRedirect("BookingFailPage.jsp");
-			
+		else
+		{
+			res.sendRedirect("WrongInputPage.jsp");
 		}
 	}
 }
